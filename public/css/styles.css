@@ -234,3 +234,98 @@ header {
     
     padding-right: 235px;
 }
+
+#hpass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 235px;
+    
+}
+
+#apass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 235px;
+}
+
+#hkeypass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 210px;
+    
+}
+
+#akeypass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 210px;
+}
+
+#hattackpass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 200px;
+    
+}
+
+#aattackpass{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 200px;
+}
+
+#hairchallenge{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 230px;
+    
+}
+
+#aairchallenge{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 200px;
+}
+
+#hgroundchallenge{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 200px;
+    
+}
+
+#agroundchallenge{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 220px;
+}

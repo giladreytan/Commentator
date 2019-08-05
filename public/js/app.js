@@ -22,27 +22,43 @@ const hyellow = document.querySelector('#hyellow')
 const ayellow = document.querySelector('#ayellow')
 const hred = document.querySelector('#hred')
 const ared = document.querySelector('#ared')
+const hpass = document.querySelector('#hpass')
+const apass = document.querySelector('#apass')
+const hkeypass = document.querySelector('#hkeypass')
+const akeypass = document.querySelector('#akeypass')
+const hattackpass = document.querySelector('#hattackpass')
+const aattackpass = document.querySelector('#aattackpass')
 
 homeTeam.textContent = 'מארחת'
 awayTeam.textContent = 'אורחת'
-agoals.textContent = '9'
+agoals.textContent = '-'
 hgoals.textContent = '8'
-hballPoss.textContent = '40%'
-aballPoss.textContent = '60%'
-aattempts.textContent = '7'
-hattempts.textContent = '6'
-aonTarget.textContent = '5'
-honTarget.textContent = '4'
-acorner.textContent = '3'
-hcorner.textContent = '2'
-aoffside.textContent = '1'
-hoffside.textContent = '0'
-afoul.textContent = '11'
-hfoul.textContent = '10'
-ayellow.textContent = '13'
-hyellow.textContent = '12'
-ared.textContent = '15'
-hred.textContent = '14'
+hballPoss.textContent = '-%'
+aballPoss.textContent = '-%'
+aattempts.textContent = '-'
+hattempts.textContent = '-'
+aonTarget.textContent = '-'
+honTarget.textContent = '-'
+acorner.textContent = '-'
+hcorner.textContent = '-'
+aoffside.textContent = '-'
+hoffside.textContent = '-'
+afoul.textContent = '-'
+hfoul.textContent = '-'
+ayellow.textContent = '-'
+hyellow.textContent = '-'
+ared.textContent = '-'
+hred.textContent = '-'
+apass.textContent = '-/-'
+hpass.textContent = '-/-'
+akeypass.textContent = '-/-'
+hkeypass.textContent = '-/-'
+aattackpass.textContent = '-'
+hattackpass.textContent = '-'
+aairchallenge.textContent = '-/-'
+hairchallenge.textContent = '-/-'
+agroundchallenge.textContent = '-/-'
+hgroundchallenge.textContent = '-/-'
 
 const loop = false;
 var gameID = ""
@@ -183,6 +199,63 @@ const ReadLiveStats = async function () {
                     ared.textContent = data.data.gameStatsAway.RedCard
                 } else {
                     ared.textContent = 0
+                }
+
+                //*********Passes */
+                if (data.data.gameStatsHome.passes) {
+                    hpass.textContent = data.data.gameStatsHome.accuratePasses + '/' + data.data.gameStatsHome.passes
+                } else {
+                    hpass.textContent = '0/0'
+                }
+                if (data.data.gameStatsAway.passes) {
+                    apass.textContent = data.data.gameStatsAway.accuratePasses + '/' + data.data.gameStatsAway.passes
+                } else {
+                    apass.textContent = '0/0'
+                }
+                //*********Key Passes */
+                if (data.data.gameStatsHome.keyPasses) {
+                    hkeypass.textContent = data.data.gameStatsHome.accurateKeyPasses + '/' + data.data.gameStatsHome.keyPasses
+                } else {
+                    hkeypass.textContent = '0/0'
+                }
+                if (data.data.gameStatsAway.keyPasses) {
+                    akeypass.textContent = data.data.gameStatsAway.accurateKeyPasses + '/' + data.data.gameStatsAway.keyPasses
+                } else {
+                    akeypass.textContent = '0/0'
+                }
+                //*********attacking Passes */
+                if (data.data.gameStatsHome.attackingPasses) {
+                    hattackpass.textContent = data.data.gameStatsHome.attackingPasses
+                } else {
+                    hattackpass.textContent = '0'
+                }
+                if (data.data.gameStatsAway.attackingPasses) {
+                    aattackpass.textContent = data.data.gameStatsAway.attackingPasses
+                } else {
+                    aattackpass.textContent = '0'
+                }
+                //*********air challenges */
+                if (data.data.gameStatsHome.airChallenge) {
+                    hairchallenge.textContent = data.data.gameStatsHome.wonAirChallenge + '/' + data.data.gameStatsHome.airChallenge
+                } else {
+                    hairchallenge.textContent = '0'
+                }
+                if (data.data.gameStatsAway.airChallenge) {
+                    aairchallenge.textContent = data.data.gameStatsAway.wonAirChallenge + '/' + data.data.gameStatsAway.airChallenge
+                } else {
+                    aairchallenge.textContent = '0'
+                }
+
+                //*********ground challenges */
+                if (data.data.gameStatsHome.groundChallenge) {
+                    hgroundchallenge.textContent = data.data.gameStatsHome.wonGroundChallenge + '/' + data.data.gameStatsHome.groundChallenge
+                } else {
+                    hgroundchallenge.textContent = '0/0'
+                }
+                if (data.data.gameStatsAway.groundChallenge) {
+                    agroundchallenge.textContent = data.data.gameStatsAway.wonGroundChallenge + '/' + data.data.gameStatsAway.groundChallenge
+                } else {
+                    agroundchallenge.textContent = '0/0'
                 }
                 //console.log(data.data.gameStatsHome.GoalRegular,homeposs,data.data.gameStatsHome.AttemptonGoal,data.data.gameStatsHome.OnTarget,data.data.gameStatsHome.Corner,data.data.gameStatsHome.Offside,data.data.gameStatsHome.foul,data.data.gameStatsHome.YellowCard,data.data.gameStatsHome.RedCard)
             })
