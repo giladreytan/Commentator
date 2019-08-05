@@ -1,0 +1,236 @@
+body {
+    color: blueviolet;
+    font-family: fbOgen;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+
+    display:flex;
+    flex-direction: column;
+    min-height: 1000vh;
+    direction: rtl
+    
+}
+
+.main-content {
+    flex-grow: 1;
+    text-align: center;
+    direction: rtl
+}
+
+footer {
+    color: #888888;
+    border-top: 1px solid #BBBBBB;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+header h1{
+    margin-top: 16px;
+    margin-bottom:16px;
+    font-size: 24px;
+    
+}
+.logo{
+    width:100px;
+    height:100px;
+}
+
+header form{
+    margin-bottom:16px;
+    width:50%;
+}
+
+header {
+    border-bottom: 1px solid #BBBBBB;
+}
+
+#teamNames {
+    display: inline-block;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+#homeName{
+    color: black;
+    font-size: 28px;
+    
+    
+    padding-left: 150px;
+}
+
+#awayName{
+    color: black;
+    font-size: 28px;
+    
+    
+    padding-right: 150px;
+}
+
+.category {
+    color: #111111;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#hgoals{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+
+    margin-left: 240px;
+}
+
+#agoals{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+
+    margin-right: 240px;
+}
+
+#hballPoss{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+
+    padding-left: 200px;
+}
+
+#aballPoss{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+
+    padding-right: 200px;
+}
+
+#hattempts{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+
+    padding-left: 200px;
+}
+
+#aattempts{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+
+    padding-right: 200px;
+}
+
+#honTarget{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+
+    padding-left: 228px;
+}
+
+#aonTarget{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+
+    padding-right: 228px;
+}
+
+#hcorner{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    padding-left: 240px;
+
+}
+
+#acorner{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+
+    padding-right: 240px;
+}
+
+#hoffside{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 235px;
+    
+}
+
+#aoffside{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 235px;
+}
+
+#hfoul{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 235px;
+    
+}
+
+#afoul{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 235px;
+}
+
+#hyellow{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 235px;
+    
+}
+
+#ayellow{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 235px;
+}
+
+#hred{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-left: 235px;
+    
+}
+
+#ared{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    
+    padding-right: 235px;
+}
