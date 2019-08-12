@@ -72,7 +72,7 @@ gameForm.addEventListener('submit', (e) => {
 
     console.log(gameID)
 
-    setInterval(ReadLiveStats, 3000)
+    setInterval(ReadLiveStats, 10000)
 
 })
 
