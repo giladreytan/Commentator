@@ -81,7 +81,7 @@ gameForm.addEventListener('submit', (e) => {
 const ReadLiveStats = async function () {
 
     try {
-        let ts = Date.now() / 1000 / 60;
+        let ts = Math.floor(Date.now() / 1000 / 60);
         fetch('https://cdnapi.bamboo-video.com/api/football/fastdata/' + gameID + '?format=json&iid=573881b7181f46ae4c8b4567&tvStats=true&timestamp=' + ts).then((response) => {//MATCH_INSTAT_ID
             response.json().then((data) => {
 
