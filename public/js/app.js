@@ -70,9 +70,9 @@ gameForm.addEventListener('submit', (e) => {
     gameID = gameIDQuery.value;
 
 
-    console.log(gameID)
+    console.log(gameID);
 
-    setInterval(ReadLiveStats, 5000)
+    setInterval(ReadLiveStats, 5000);
 
 })
 
@@ -81,15 +81,16 @@ gameForm.addEventListener('submit', (e) => {
 const ReadLiveStats = async function () {
 
     try {
-        let ts = Math.floor(Date.now() / 1000 / 30);
+        let ts = Math.floor(Date.now() / 1000 / 10);
+        console.log("time: " + ts);
         fetch('https://cdnapi.bamboo-video.com/api/football/fastdata/' + gameID + '?format=json&iid=573881b7181f46ae4c8b4567&tvStats=true&timestamp=' + ts).then((response) => {//MATCH_INSTAT_ID
             response.json().then((data) => {
 
                 if (data.error) {
-                    console.log('Error in JSON')
+                    console.log('Error in JSON');
                 } else {
-                    homeTeam.textContent = data.data.homeTeam.hebrewName
-                    awayTeam.textContent = data.data.awayTeam.hebrewName
+                    homeTeam.textContent = data.data.homeTeam.hebrewName;
+                    awayTeam.textContent = data.data.awayTeam.hebrewName;
                 }
 
                 //*********Goals */
