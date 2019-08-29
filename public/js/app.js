@@ -71,6 +71,7 @@ gameForm.addEventListener('submit', (e) => {
 
 
     console.log(gameID);
+    ReadLiveStats();
 
     setInterval(ReadLiveStats, 5000);
 
@@ -89,24 +90,15 @@ const ReadLiveStats = async function () {
                 if (data.error) {
                     console.log('Error in JSON');
                 } else {
-                    homeTeam.textContent = data.data.homeTeam.hebrewName;
-                    awayTeam.textContent = data.data.awayTeam.hebrewName;
+                    setValues(homeTeam,data.data.homeTeam.hebrewName)
+                    setValues(awayTeam,data.data.awayTeam.hebrewName)
+
                 }
 
                 //*********Goals */
-                if (data.data.gameStatsHome.GoalRegular) {
-
-                    hgoals.textContent = data.data.gameStatsHome.GoalRegular
-                } else {
-                    hgoals.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.GoalRegular) {
-                    agoals.textContent = data.data.gameStatsAway.GoalRegular
-                } else {
-                    agoals.textContent = 0
-                }
-
+                setValues(hgoals,data.data.gameStatsHome.GoalRegular)
+                setValues(agoals,data.data.gameStatsAway.GoalRegular)
+                
                 //*********Ball Possession */
 
                 const homeposs = Math.round((data.data.ballTimeHome) * 100 / (data.data.ballTimeHome + data.data.ballTimeAway))
@@ -114,151 +106,54 @@ const ReadLiveStats = async function () {
                 aballPoss.textContent = (100 - homeposs) + '%'
 
                 //*********attempts on goal */
-                if (data.data.gameStatsHome.AttemptonGoal) {
-                    hattempts.textContent = data.data.gameStatsHome.AttemptonGoal
-                } else {
-                    hattempts.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.AttemptonGoal) {
-                    aattempts.textContent = data.data.gameStatsAway.AttemptonGoal
-                } else {
-                    aattempts.textContent = 0
-                }
-
+                setValues(hattempts,data.data.gameStatsHome.AttemptonGoal)
+                setValues(aattempts,data.data.gameStatsAway.AttemptonGoal)
+               
                 //*********attempts on target */
-                if (data.data.gameStatsHome.OnTarget) {
-                    honTarget.textContent = data.data.gameStatsHome.OnTarget
-                } else {
-                    honTarget.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.OnTarget) {
-                    aonTarget.textContent = data.data.gameStatsAway.OnTarget
-                } else {
-                    aonTarget.textContent = 0
-                }
-
+                setValues(honTarget, data.data.gameStatsHome.OnTarget)
+                setValues(aonTarget,data.data.gameStatsAway.OnTarget)
+          
                 //*********Corners */
-                if (data.data.gameStatsHome.Corner) {
-                    hcorner.textContent = data.data.gameStatsHome.Corner
-                } else {
-                    hcorner.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.Corner) {
-                    acorner.textContent = data.data.gameStatsAway.Corner
-                } else {
-                    acorner.textContent = 0
-                }
+                setValues(hcorner,data.data.gameStatsHome.Corner)
+                setValues(acorner,data.data.gameStatsAway.Corner)
 
                 //*********Offsides */
-                if (data.data.gameStatsHome.Offside) {
                     hoffside.textContent = data.data.gameStatsHome.Offside
-                } else {
-                    hoffside.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.Offside) {
-                    aoffside.textContent = data.data.gameStatsAway.Offside
-                } else {
-                    aoffside.textContent = 0
-                }
+                setValues(hoffside,data.data.gameStatsHome.Offside)
+                setValues(aoffside,data.data.gameStatsAway.Offside)
 
                 //*********Fouls */
-                if (data.data.gameStatsHome.foul) {
-                    hfoul.textContent = data.data.gameStatsHome.foul
-                } else {
-                    hfoul.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.foul) {
-                    afoul.textContent = data.data.gameStatsAway.foul
-                } else {
-                    afoul.textContent = 0
-                }
+                setValues(hfoul,data.data.gameStatsHome.foul)
+                setValues(afoul,data.data.gameStatsAway.foul)
 
                 //*********Yellow Cards */
-                if (data.data.gameStatsHome.YellowCard) {
-                    hyellow.textContent = data.data.gameStatsHome.YellowCard
-                } else {
-                    hyellow.textContent = 0
-                }
-
-                if (data.data.gameStatsAway.YellowCard) {
-                    ayellow.textContent = data.data.gameStatsAway.YellowCard
-                } else {
-                    ayellow.textContent = 0
-                }
+                setValues(hyellow,data.data.gameStatsHome.YellowCard)
+                setValues(ayellow,data.data.gameStatsAway.YellowCard)
 
                 //*********Red Cards */
-                if (data.data.gameStatsHome.RedCard) {
-                    hred.textContent = data.data.gameStatsHome.RedCard
-                } else {
-                    hred.textContent = 0
-                }
-                if (data.data.gameStatsAway.RedCard) {
-                    ared.textContent = data.data.gameStatsAway.RedCard
-                } else {
-                    ared.textContent = 0
-                }
+                setValues(hred,data.data.gameStatsHome.RedCard)
+                setValues(ared,data.data.gameStatsAway.RedCard)
 
                 //*********Passes */
-                if (data.data.gameStatsHome.passes) {
-                    hpass.textContent = data.data.gameStatsHome.accuratePasses + '/' + data.data.gameStatsHome.passes
-                } else {
-                    hpass.textContent = '0/0'
-                }
-                if (data.data.gameStatsAway.passes) {
-                    apass.textContent = data.data.gameStatsAway.accuratePasses + '/' + data.data.gameStatsAway.passes
-                } else {
-                    apass.textContent = '0/0'
-                }
+                setDoubleValues(hpass, data.data.gameStatsHome.accuratePasses, data.data.gameStatsHome.passes)
+                setDoubleValues(apass, data.data.gameStatsAway.accuratePasses, data.data.gameStatsAway.passes)
+
                 //*********Key Passes */
-                if (data.data.gameStatsHome.keyPasses) {
-                    hkeypass.textContent = data.data.gameStatsHome.accurateKeyPasses + '/' + data.data.gameStatsHome.keyPasses
-                } else {
-                    hkeypass.textContent = '0/0'
-                }
-                if (data.data.gameStatsAway.keyPasses) {
-                    akeypass.textContent = data.data.gameStatsAway.accurateKeyPasses + '/' + data.data.gameStatsAway.keyPasses
-                } else {
-                    akeypass.textContent = '0/0'
-                }
+                setDoubleValues(hkeypass,data.data.gameStatsHome.accurateKeyPasses,data.data.gameStatsHome.keyPasses)
+                setDoubleValues(akeypass,data.data.gameStatsAway.accurateKeyPasses,data.data.gameStatsAway.keyPasses)
+
                 //*********attacking Passes */
-                if (data.data.gameStatsHome.attackingPasses) {
-                    hattackpass.textContent = data.data.gameStatsHome.attackingPasses
-                } else {
-                    hattackpass.textContent = '0'
-                }
-                if (data.data.gameStatsAway.attackingPasses) {
-                    aattackpass.textContent = data.data.gameStatsAway.attackingPasses
-                } else {
-                    aattackpass.textContent = '0'
-                }
+                setValues(hattackpass,data.data.gameStatsHome.attackingPasses)
+                setValues(aattackpass,data.data.gameStatsAway.attackingPasses)
+
                 //*********air challenges */
-                if (data.data.gameStatsHome.airChallenge) {
-                    hairchallenge.textContent = data.data.gameStatsHome.wonAirChallenge + '/' + data.data.gameStatsHome.airChallenge
-                } else {
-                    hairchallenge.textContent = '0'
-                }
-                if (data.data.gameStatsAway.airChallenge) {
-                    aairchallenge.textContent = data.data.gameStatsAway.wonAirChallenge + '/' + data.data.gameStatsAway.airChallenge
-                } else {
-                    aairchallenge.textContent = '0'
-                }
+                setDoubleValues(hairchallenge,data.data.gameStatsHome.wonAirChallenge,data.data.gameStatsHome.airChallenge)
+                setDoubleValues(aairchallenge,data.data.gameStatsAway.wonAirChallenge,data.data.gameStatsAway.airChallenge)
 
                 //*********ground challenges */
-                if (data.data.gameStatsHome.groundChallenge) {
-                    hgroundchallenge.textContent = data.data.gameStatsHome.wonGroundChallenge + '/' + data.data.gameStatsHome.groundChallenge
-                } else {
-                    hgroundchallenge.textContent = '0/0'
-                }
-                if (data.data.gameStatsAway.groundChallenge) {
-                    agroundchallenge.textContent = data.data.gameStatsAway.wonGroundChallenge + '/' + data.data.gameStatsAway.groundChallenge
-                } else {
-                    agroundchallenge.textContent = '0/0'
-                }
+                setDoubleValues(hgroundchallenge,data.data.gameStatsHome.wonGroundChallenge,data.data.gameStatsHome.groundChallenge)
+                setDoubleValues(agroundchallenge,data.data.gameStatsAway.wonGroundChallenge,data.data.gameStatsAway.groundChallenge)
+
                 //console.log(data.data.gameStatsHome.GoalRegular,homeposs,data.data.gameStatsHome.AttemptonGoal,data.data.gameStatsHome.OnTarget,data.data.gameStatsHome.Corner,data.data.gameStatsHome.Offside,data.data.gameStatsHome.foul,data.data.gameStatsHome.YellowCard,data.data.gameStatsHome.RedCard)
             })
 
@@ -267,5 +162,20 @@ const ReadLiveStats = async function () {
     } catch (e) {
         console.log(e.message)
     }
+
+}
+
+const setValues = function (_fieldStat, statVal) {
+    //console.log('value: ' + statVal);
+    if (statVal) {
+        _fieldStat.textContent = statVal;
+    } else {_fieldStat.textContent = 0;}
+}
+
+const setDoubleValues = function (_fieldStat, statValA, statValB) {
+    //console.log('value: ' + statValA + ' value: ' + statValB);
+    if (statValB) {
+        _fieldStat.textContent = statValA + '/' + statValB;
+    } else {_fieldStat.textContent = '0/0';}
 
 }
