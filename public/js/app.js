@@ -118,7 +118,7 @@ const ReadLiveStats = async function () {
                 setValues(acorner,data.data.gameStatsAway.Corner)
 
                 //*********Offsides */
-                    hoffside.textContent = data.data.gameStatsHome.Offside
+                
                 setValues(hoffside,data.data.gameStatsHome.Offside)
                 setValues(aoffside,data.data.gameStatsAway.Offside)
 
@@ -154,7 +154,7 @@ const ReadLiveStats = async function () {
                 setDoubleValues(hgroundchallenge,data.data.gameStatsHome.wonGroundChallenge,data.data.gameStatsHome.groundChallenge)
                 setDoubleValues(agroundchallenge,data.data.gameStatsAway.wonGroundChallenge,data.data.gameStatsAway.groundChallenge)
 
-                //console.log(data.data.gameStatsHome.GoalRegular,homeposs,data.data.gameStatsHome.AttemptonGoal,data.data.gameStatsHome.OnTarget,data.data.gameStatsHome.Corner,data.data.gameStatsHome.Offside,data.data.gameStatsHome.foul,data.data.gameStatsHome.YellowCard,data.data.gameStatsHome.RedCard)
+                
             })
 
 
