@@ -21,7 +21,11 @@ app.use(express.static(stat_path))
 
 app.get('', (req, res) => {
 
-    res.render('index')
+    res.render('index', {type: "primary-league", logoUrl: "/img/logo_boursa.webp"})
+})
+
+app.get('/leumit', (req,res)=> {
+    res.render('index', {type: "secondary-league", logoUrl: "/img/leumit-logo.png"})
 })
 
 app.get('/game', (req, res) => {
@@ -35,5 +39,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port,  () => {
-    console.log('Server is up on port: '+ port)
+    console.log(`Server is up on port: http://localhost:${port}`)
 })

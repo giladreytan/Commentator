@@ -28,6 +28,8 @@ const hkeypass = document.querySelector('#hkeypass')
 const akeypass = document.querySelector('#akeypass')
 const hattackpass = document.querySelector('#hattackpass')
 const aattackpass = document.querySelector('#aattackpass')
+const awayTeamLogo = document.querySelector('#awayTeamLogo')
+const homeTeamLogo = document.querySelector('#homeTeamLogo')
 
 homeTeam.textContent = 'מארחת'
 awayTeam.textContent = 'אורחת'
@@ -92,7 +94,8 @@ const ReadLiveStats = async function () {
                 } else {
                     setValues(homeTeam,data.data.homeTeam.hebrewName)
                     setValues(awayTeam,data.data.awayTeam.hebrewName)
-
+                    setImgSRC(homeTeamLogo, data.data.homeTeam.logoUrl)
+                    setImgSRC(awayTeamLogo, data.data.awayTeam.logoUrl)
                 }
 
                 //*********Goals */
@@ -170,6 +173,11 @@ const setValues = function (_fieldStat, statVal) {
     if (statVal) {
         _fieldStat.textContent = statVal;
     } else {_fieldStat.textContent = 0;}
+}
+
+const setImgSRC = function (elem, imgSRC) {
+    if(elem && elem.src && imgSRC)
+        elem.src = imgSRC;
 }
 
 const setDoubleValues = function (_fieldStat, statValA, statValB) {
