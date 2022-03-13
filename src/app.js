@@ -21,7 +21,7 @@ app.use(express.static(stat_path))
 
 app.get('', (req, res) => {
 
-    res.render('index', {type: "primary-league", logoUrl: "/img/logo_boursa.webp"})
+    res.render('index', {type: "primary-league", logoUrl: "/img/logo_boursa.png"})
 })
 
 app.get('/leumit', (req,res)=> {
