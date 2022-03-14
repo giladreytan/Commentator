@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'FbOgen';
+    src: url('../font/FbOgen-Regular.otf') format('opentype'), /* IE6-IE8 */
+         url('../font/FbOgen-Regular.ttf') format('truetype'), /* Modern Browsers */
+}
+
+@font-face {
+    font-family: 'FbOgen';
+    src: url('../font/FbOgen-SemiBold.ttf') format("truetype"); /* IE9 Compat Modes */
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'FbOgen';
+    src: url('../font/FbOgen-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weigth: bolder;
+  }

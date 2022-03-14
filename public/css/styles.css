@@ -1,331 +1,117 @@
+@import "font.css";
+
+:root {
+    --text-color: #000430;
+    --title: #fff;
+    --font-size: 24;
+    --goal-bg: hsl(235, 100%, 70%);
+    --bg-src: url("/img/bg-primary-league.webp");
+    --logo-height: 150px
+}
+
+.secondary-league {
+    --text-color: #610166;
+    --font-size: 24;
+    --goal-bg: #c3a9ff;
+    --bg-src: url("/img/bg-leumit.png");
+    --logo-height: 79px
+}
+
 body {
-    color: blueviolet;
-    font-family: fbOgen;
-    max-width: 1200px;
+    background-image: var(--bg-src);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    font-size: var(--font-size);
+    font-family: FbOgen;
     margin: 0 auto;
-    padding: 16px;
-
-    display:flex;
-    flex-direction: column;
-    min-height: 1000vh;
-    direction: rtl
-    
+    direction: rtl;
 }
 
-.main-content {
-    flex-grow: 1;
+.header-bg-cover {
+    z-index: 0;
+    position: absolute;
+    height: 160px;
+    width: 100%;
+    background: var(--text-color);
+}
+
+.main-content { 
+    display: grid;
+    grid-template-rows: .5fr 2fr .5fr;
+    max-width: 1200px;
+    margin: auto;
+}
+.stats {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
     text-align: center;
-    direction: rtl
+    display: grid;
+    grid-template-columns: 1fr; 
+    align-items: center;
+    background: #fff;
 }
-
-footer {
-    color: #888888;
-    border-top: 1px solid #BBBBBB;
-    margin-top: 16px;
-    padding: 16px 0;
+.statsHeader {
+    color: #fff;
+    background: var(--text-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
 }
-
-header h1{
-    margin-top: 16px;
-    margin-bottom:16px;
-    font-size: 24px;
-    
+h1 {
+    font-size: 36px;
 }
-.logo{
-    width:100px;
-    height:100px;
+h1.goals {
+    color: var(--text-color);
+    background-color: var(--goal-bg);
+    font-size: 42px;
+    padding: 0.2rem 1.5rem;
 }
-
-header form{
-    margin-bottom:16px;
-    width:50%;
+.statsHeader img {
+    max-height: 100px;
 }
-
 header {
-    border-bottom: 1px solid #BBBBBB;
+    z-index: 1;
+    padding-top: 1rem;
+    background: var(--text-color);
 }
 
-#teamNames {
-    display: inline-block;
-    padding-right: 150px;
-    padding-left: 150px;
-}
-
-#homeName{
-    color: black;
-    font-size: 28px;
-    
-    
-    padding-left: 150px;
-}
-
-#awayName{
-    color: black;
-    font-size: 28px;
-    
-    
-    padding-right: 150px;
+header form {
+    padding-bottom: 1rem;
 }
 
 .category {
-    color: #111111;
-    font-weight: bold;
-    font-size: 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    border-bottom: 1px solid #888888;
+    align-items: center;
+    height: 36px;
 }
 
-#hgoals{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-
-    margin-left: 240px;
+.category h2 {
+    margin: 0;
 }
 
-#agoals{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-
-    margin-right: 240px;
+footer {
+    width: 90%;
+    margin: 2rem auto 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#hballPoss{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-
-    padding-left: 200px;
+#minhelet-logo {
+    max-height: 140px;
 }
 
-#aballPoss{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-
-    padding-right: 200px;
+#liga-logo {
+    max-height: var(--logo-height);
 }
 
-#hattempts{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-
-    padding-left: 200px;
-}
-
-#aattempts{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-
-    padding-right: 200px;
-}
-
-#honTarget{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-
-    padding-left: 228px;
-}
-
-#aonTarget{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-
-    padding-right: 228px;
-}
-
-#hcorner{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    padding-left: 240px;
-
-}
-
-#acorner{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-
-    padding-right: 240px;
-}
-
-#hoffside{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 235px;
-    
-}
-
-#aoffside{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 235px;
-}
-
-#hfoul{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 235px;
-    
-}
-
-#afoul{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 235px;
-}
-
-#hyellow{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 235px;
-    
-}
-
-#ayellow{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 235px;
-}
-
-#hred{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 235px;
-    
-}
-
-#ared{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 235px;
-}
-
-#hpass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 235px;
-    
-}
-
-#apass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 235px;
-}
-
-#hkeypass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 210px;
-    
-}
-
-#akeypass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 210px;
-}
-
-#hattackpass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 200px;
-    
-}
-
-#aattackpass{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 200px;
-}
-
-#hairchallenge{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 230px;
-    
-}
-
-#aairchallenge{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 200px;
-}
-
-#hgroundchallenge{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-left: 200px;
-    
-}
-
-#agroundchallenge{
-    color: black;
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-    
-    padding-right: 220px;
+.divider {
+    width: 6px;
+    height: 36px;
+    background: #fff;
 }
