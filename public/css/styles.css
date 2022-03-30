@@ -115,3 +115,7 @@ footer {
     height: 36px;
     background: #fff;
 }
+
+.secondary-league .stats > div:nth-child(n+9) {
+    display: none;
+}

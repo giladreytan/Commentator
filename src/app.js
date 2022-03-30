@@ -21,11 +21,11 @@ app.use(express.static(stat_path))
 
 app.get('', (req, res) => {
 
-    res.render('index', {type: "primary-league", logoUrl: "/img/logo_boursa.png"})
+    res.render('index', {type: "primary-league", logoUrl: "/img/with bold discriptor white.png"})
 })
 
 app.get('/leumit', (req,res)=> {
-    res.render('index', {type: "secondary-league", logoUrl: "/img/leumit-logo.png"})
+    res.render('index', {type: "secondary-league", logoUrl: "/img/Leumit new.png"})
 })
 
 app.get('/game', (req, res) => {
